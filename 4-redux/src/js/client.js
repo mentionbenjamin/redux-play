@@ -1,28 +1,7 @@
-import {createStore} from "redux";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Layout from './componens/layout.js';
 
-const reducer = function (state, action) {
- if(action.type === "INCREMENT") {
-   return state + 1;
- }
- if(action.type === "DECREMENT") {
-   return state - 1;
- }
- return state;
-}
+const app = document.getElementById('app');
 
-
-const store = createStore(reducer, 0);
-
-store.subscribe(() => {
-  console.log("store changed", store.getState());
-});
-
-store.dispatch({type: "INCREMENT", payload: 1 })
-store.dispatch({type: "INCREMENT", payload: 1 })
-store.dispatch({type: "INCREMENT", payload: 1 })
-store.dispatch({type: "INCREMENT", payload: 1 })
-store.dispatch({type: "INCREMENT", payload: 1 })
-store.dispatch({type: "DECREMENT", payload: 1 })
-store.dispatch({type: "DECREMENT", payload: 1 })
-store.dispatch({type: "DECREMENT", payload: 1 })
-store.dispatch({type: "DECREMENT", payload: 1 })
+ReactDOM.render(<Layout />, app);
